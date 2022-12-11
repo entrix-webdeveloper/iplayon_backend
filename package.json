@@ -1,0 +1,48 @@
+{
+    "name": "CVT-wallet",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+        "node": "^12.13.1"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "test": "jest  --detectOpenHandles --setupFiles ./jest.config.js  --forceExit --config ./jest.config.json --env=node --verbose",
+        "test:watch": "npm run test -- --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@sendgrid/mail": "^7.6.0",
+        "agenda": "^4.2.1",
+        "axios": "^0.21.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "dotenv": "^8.6.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "firebase-admin": "^9.11.1",
+        "global": "^4.4.0",
+        "html-pdf": "^3.0.1",
+        "html-pdf-node": "^1.0.7",
+        "jest": "^26.6.3",
+        "jsonwebtoken": "^8.5.1",
+        "luxon": "^1.26.0",
+        "moment": "^2.29.1",
+        "mongoose": "^5.11.13",
+        "otplib": "^12.0.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "razorpay": "^2.0.6",
+        "springedge": "^1.0.5",
+        "util": "^0.12.3",
+        "validate.js": "^0.13.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12",
+        "supertest": "^6.1.3"
+    }
+}

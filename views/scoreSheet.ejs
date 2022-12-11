@@ -1,0 +1,211 @@
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        tr {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 8px;
+            font-size: 14px;
+            min-height: 12px;
+        }
+
+        p {
+            font-size: 10px
+        }
+
+        .productHeader1 {
+            text-align: center;
+            width: 15%;
+        }
+
+        .productHeader {
+            text-align: center;
+            width: 15%;
+        }
+
+        .monthHeader {
+            text-align: center;
+            width: 5%;
+        }
+
+        .page {
+            page-break-after: auto;
+        }
+
+        .tourHeader {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            /* number of lines to show */
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <% for(var i=0; i < data.matchRecords.length; i++) { %>
+        <p class='tourHeader' style="margin-top: 25px;font-size: 15px;">
+            <%= data.tournamentName %>
+                <%= data.tournamentName %>
+        </p>
+        <p class='tourHeader' style="font-size: 13px;">
+            <%= data.tournamentAddress %>
+        </p>
+        <table style="margin-top: 20px;">
+            <tbody>
+                <tr>
+                    <td colspan=3>
+                        <p class='tourHeader'>EVENT : <%= data.eventName%>
+                        </p>
+                    </td>
+                    <td colspan=3>
+                        <p style="font-size: 12px;">
+                            <% if(data.matchRecords[i].roundName) { %>
+                                <%= data.matchRecords[i].roundName %>
+                                    <% } else { %> ROUND :
+                                        <% } %>
+                        </p>
+                    </td>
+                    <td colspan=3>
+                        <p style="font-size: 12px;">
+                            <% if(data.matchRecords[i].matchNumber) { %>
+                                <%= data.matchRecords[i].matchNumber %>
+                                    <% } else { %> MATCH :
+                                        <% } %>
+                        </p>
+                    </td>
+                    <td colspan=4>
+                        <p style="font-size: 12px;">
+                            <%= data.eventStartDate%> - <%= data.eventEndDate%>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sl. No.</td>
+                    <td width="30%">
+                        <p style="font-size: 12px;">
+                            <% if(data.headerName) { %>
+                                <%= data.headerName%>
+                                    <% } else { %> NAME OF THE PLAYER :
+                                        <% } %>
+                        </p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">1</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">2</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">3</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">4</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">5</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">6</p>
+                    </td>
+                    <td width="5%">
+                        <p style="font-size: 12px;">7</p>
+                    </td>
+                    <td width="12%">
+                        <p style="font-size: 10px;">TIME OUT</p>
+                    </td>
+                    <td width="8%">
+                        <p style="font-size: 12px;">TABLE</p>
+                    </td>
+                </tr>
+                <tr class="data">
+                    <% if(data.matchRecords[i].playersNo && data.matchRecords[i].playersNo.playerANo) { %>
+                        <td>
+                            <%= data.matchRecords[i].playersNo.playerANo %>
+                        </td>
+                        <% } else { %>
+                            <td> 1 </td>
+                            <% } %>
+                                <td width="30%;">
+                                    <p class='tourHeader' style="font-size: 13px;">
+                                        <% if(data.matchRecords[i].players && data.matchRecords[i].players.playerA) { %>
+                                            <%= data.matchRecords[i].players.playerA %>
+                                                <% } else { %>
+                                                    <% } %>
+                                    </p>
+                                </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="12%"></td>
+                                <td width="8%"> </td>
+                </tr>
+                <tr class="data">
+                    <% if(data.matchRecords[i].playersNo && data.matchRecords[i].playersNo.playerBNo) { %>
+                        <td>
+                            <%= data.matchRecords[i].playersNo.playerBNo %>
+                        </td>
+                        <% } else { %>
+                            <td> 2 </td>
+                            <% } %>
+                                <td width="30%">
+                                    <p class='tourHeader' style="font-size: 13px;">
+                                        <% if(data.matchRecords[i].players && data.matchRecords[i].players.playerB) { %>
+                                            <%= data.matchRecords[i].players.playerB %>
+                                                <% } else { %>
+                                                    <% } %>
+                                    </p>
+                                </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="5%"> </td>
+                                <td width="12%"></td>
+                                <td width="8%"> </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-top: 10px;">
+            <tbody>
+                <tr>
+                    <td>
+                        <p style="font-size: 12px;">WINNERS</p>
+                    </td>
+                    <td>
+                        <p style="font-size: 12px;">UMPIRE</p>
+                    </td>
+                    <td>
+                        <p style="font-size: 12px;">REFEREE</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td height='50px'> </td>
+                    <td height='50px'> </td>
+                    <td height='50px'> </td>
+                </tr>
+            </tbody>
+        </table>
+        <% } %>
+</body>
+
+</html>
